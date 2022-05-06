@@ -43,7 +43,7 @@ export class PostsController extends BaseController {
       req.body.creatorId = req.userInfo.id
       req.body.id = req.params.id
       const post = await postsService.edit(req.body)
-      return res.send()
+      return res.send(post)
     } catch (error) {
       next(error)
     }

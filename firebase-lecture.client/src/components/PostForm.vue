@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="upload" class="p-5" action="">
+  <form @submit.prevent="upload" class="p-1" action="">
     <div class="mb-3">
       <label for="" class="form-label">Title</label>
       <input
@@ -20,7 +20,7 @@
         required
       />
     </div>
-    <button class="btn btn-primary">Submit</button>
+    <button class="btn mt-2 btn-warning">Submit</button>
   </form>
 </template>
 

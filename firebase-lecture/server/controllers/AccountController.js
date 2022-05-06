@@ -10,7 +10,9 @@ export class AccountController extends BaseController {
       .use(Auth0Provider.getAuthorizedUserInfo)
       .get('', this.getUserAccount)
       .get('/firebase', this.getFirebaseToken)
+      .put('', this.editAccount)
   }
+
 
   async getUserAccount(req, res, next) {
     try {
@@ -25,6 +27,15 @@ export class AccountController extends BaseController {
     try {
       const token = await firebaseService.getToken(req.userInfo.id)
       return res.send({ token })
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async editAccount(req, res, next) {
+    try {
+      const account = await accountService.updateAccount(req.userInfo, req.body)
+      return res.send(account)
     } catch (error) {
       next(error)
     }

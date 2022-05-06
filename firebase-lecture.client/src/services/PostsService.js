@@ -13,6 +13,12 @@ class PostsService {
     logger.log(res.data)
     AppState.posts.push(res.data)
   }
+
+  async delete(id) {
+    const res = await api.delete('api/posts/' + id)
+    logger.log(res.data)
+    AppState.posts = AppState.posts.filter(p => p.id !== id)
+  }
 }
 
 export const postsService = new PostsService()

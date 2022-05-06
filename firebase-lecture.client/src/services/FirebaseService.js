@@ -28,6 +28,15 @@ class FirebaseService {
     const url = await snapshot.ref.getDownloadURL()
     return url
   }
+
+  async delete(imgUrl) {
+    const filename = imgUrl.slice(imgUrl.indexOf('%2F') + 3, imgUrl.indexOf('?alt'))
+    logger.log('filename: ', filename)
+    logger.log('url: ', imgUrl)
+    const collection = storage.ref('Images')
+    const fileRef = collection.child(filename)
+    await fileRef.delete()
+  }
 }
 
 export const firebaseService = new FirebaseService()
