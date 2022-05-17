@@ -87,7 +87,8 @@ Run 'npm i firebase' in your client folder
 
 ### Step 2:
 Go and grab your firebaseConfig from Firebase under Project/App/App Settings
-Place these in your env.js and set it up as an export called firebaseConfig
+
+Place this in your env.js and set it up as an export called firebaseConfig
 
 ### Step 3:
 Set up your FirebaseProvider in your Utils folder.
