@@ -1,6 +1,5 @@
 import { dbContext } from "../db/DbContext";
 import { BadRequest, Forbidden } from "../utils/Errors";
-import { firebaseService } from "./FirebaseService";
 
 class PostsService {
   async getAll(query = {}) {

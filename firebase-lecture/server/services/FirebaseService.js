@@ -1,5 +1,5 @@
 import firebaseAdmin from "firebase-admin";
-const firebaseAccountKey = require('../../Firebase.env.json')
+const firebaseAccountKey = require('../../Firebase.env.json');
 class FirebaseService {
   constructor () {
     firebaseAdmin.initializeApp({

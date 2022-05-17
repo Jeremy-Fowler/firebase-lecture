@@ -7,6 +7,7 @@ import { dbContext } from '../db/DbContext'
  * @param {any} account
  * @param {any} user
  */
+
 async function createAccountIfNeeded(account, user) {
   if (!account) {
     user._id = user.id
