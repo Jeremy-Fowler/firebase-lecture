@@ -31,6 +31,7 @@ import { postsService } from '../services/PostsService'
 import { logger } from '../utils/Logger'
 import Pop from '../utils/Pop'
 import { firebaseService } from '../services/FirebaseService'
+import { Modal } from 'bootstrap'
 export default {
   setup() {
     const editable = ref({})
@@ -54,6 +55,7 @@ export default {
       async createPost() {
         try {
           await postsService.create(editable.value)
+          Modal.getOrCreateInstance('#create-post').hide()
         } catch (error) {
           logger.error(error)
           Pop.toast(error.message, 'error')
